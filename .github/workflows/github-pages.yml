@@ -1,0 +1,30 @@
+name: GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # 或者你选择的其他分支
+  
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+
+      - name: Install dependencies
+        run: |
+          gem install bundler
+          bundle install
+
+      - name: Build the site with Jekyll
+        run: bundle exec jekyll build
+
+      - name: Deploy to GitHub Pages
+        run: |
+          bundle exec jekyll build
+          bundle exec jekyll deploy
