@@ -1,0 +1,140 @@
+body {
+    animation: fadeIn 0.5s ease-in-out;
+    margin: 0;
+    height: 100vh;
+    overflow-y: auto;
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+pre, code {
+    border-radius: 5px;
+}
+.docsify-copy-code-button {
+    background-color: #444 !important;
+    color: #fff !important;
+    border-radius: 5px;
+    font-size: 12px;
+    padding: 5px 8px;
+}
+.docsify-copy-code-button:hover {
+    background-color: #666 !important;
+}
+/* 悬浮窗样式 */
+.floating-window {
+    width: 600px;
+    height: 400px;
+    position: fixed;
+    top: 100px;
+    left: 100px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    background-color: #f9f9f9;
+    resize: both;
+    overflow: hidden;
+    z-index: 9999;
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    min-width: 400px;
+    min-height: 300px;
+}
+.floating-window.minimized {
+    opacity: 0;
+    transform: scale(0.9);
+}
+.window-header {
+    background: linear-gradient(45deg, #007BFF, #0056b3);
+    color: #fff;
+    padding: 10px 15px;
+    cursor: grab;
+    user-select: none;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    border-radius: 10px 10px 0 0;
+}
+.window-title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 16px;
+    font-weight: bold;
+}
+.window-button {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    color: #007BFF;
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+.window-button:hover {
+    background-color: #fff;
+    color: #0056b3;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+.window-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+.content-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.editor-container {
+    flex: 6.5;
+    background-color: #2d2d2d;
+    color: #fff;
+    font-family: monospace;
+    font-size: 14px;
+    border-bottom: 1px solid #ccc;
+    overflow: auto;
+}
+.console-container {
+    flex: 3.5;
+    background-color: #1e1e1e;
+    color: #fff;
+    font-family: monospace;
+    font-size: 14px;
+    padding: 10px;
+    overflow: auto;
+}
+.open-window-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: linear-gradient(45deg, #007BFF, #0056b3);
+    background-size: 200% auto;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-position 0.3s ease-in-out;
+}
+.open-window-button:hover {
+    transform: scale(1.1);
+    background-position: left center;
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.3);
+}
+.open-window-button.hidden {
+    opacity: 0;
+    transform: scale(0.9);
+}
+.open-window-button:active {
+    transform: scale(1);
+}

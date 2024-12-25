@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BeYourAI</title>
+    <!-- Docsify 主题样式 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css">
+    <!-- Prism.js 高亮主题 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prism-themes/themes/prism-okaidia.css">
+    <!-- Codemirror 样式 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/theme/dracula.min.css">
+    <!-- 自定义样式 -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app"></div>
+
+    <!-- 悬浮窗 -->
+    <div class="floating-window minimized" id="floatingWindow">
+        <div class="window-header">
+            <button class="window-button" id="runButton">运行</button>
+            <span class="window-title">WebPy - BeYourAI</span>
+            <button class="window-button" id="minimizeButton">-</button>
+        </div>
+        <div class="window-content">
+            <div class="content-container">
+                <div class="editor-container" id="editor-container"></div>
+                <div class="console-container" id="console-container"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 打开窗口按钮 -->
+    <button class="open-window-button" id="openWindowButton">打开WebPy</button>
+
+    <!-- 引入脚本 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/mode/python/python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/addon/edit/matchbrackets.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/addon/selection/active-line.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        window.$docsify = {
+            name: 'BeYourAI',
+            repo: 'https://github.com/TheD0ubleC/BeYourAI',
+            loadSidebar: true,
+            loadNavbar: true,
+            subMaxLevel: 2,
+            themeColor: '#FF9AA2',
+            search: {
+                placeholder: '搜索文档...',
+                noData: '找不到结果',
+                depth: 2
+            },
+            copyCode: {
+                buttonText: '复制',
+                successText: '已复制！'
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/docsify@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.25.0/components/prism-python.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.25.0/components/prism-javascript.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
+</body>
+</html>

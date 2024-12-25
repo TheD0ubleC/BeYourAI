@@ -1,0 +1,3 @@
+- [首页](README.md)
+- [GitHub](https://github.com/TheD0ubleC/BeYourAI)
+- [支持我](PayMe50.md)
